@@ -1,5 +1,5 @@
 // DOM HTML REFERENCES
-const display = document.querySelector(".display__output")
+const display = document.querySelector(".calculator__output")
 const numberButtons = document.querySelectorAll(".calculator__numButton")
 const operatorButtons = document.querySelectorAll(".calculator__opButton")
 const acButton = document.querySelector(".calculator__clearButton")
@@ -13,8 +13,7 @@ let secondNumber = "";
 let sumNumber = 0;
 let storedNumber = 0;
 
-// FUNCTIONS
-
+// ---------FUNCTIONS-----------
 
 
 // NUMBER BUTTONS FUNCTION
@@ -69,11 +68,7 @@ equalButton.addEventListener("click", (event) =>{
     }
     display.innerHTML = sumNumber
     storedNumber = sumNumber;
-    // AFTER CALC RESET VARIABLE
-
-    // add formatting to insert number commas
-
-    console.log(storedNumber)
+    // console.log(storedNumber)
 })
 
 // AC BUTTON FUNCTION, 
@@ -86,11 +81,7 @@ acButton.addEventListener("click", (event) => {
     storedNumber = 0;
 })
 
-
 // DECIMAL BUTTON
 decBtn.addEventListener('click', () => {
-    // If initial number doesn't include a '.', then attach a '.'.
-    if (firstNumber.includes('.')) {
-        firstNumber += '.';
-    }
+   
 })
