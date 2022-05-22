@@ -4,24 +4,26 @@ const numberButtons = document.querySelectorAll(".calculator__numButton")
 const operatorButtons = document.querySelectorAll(".calculator__opButton")
 const acButton = document.querySelector(".calculator__clearButton")
 const equalButton = document.querySelector(".calculator__equalButton")
+const decBtn = document.querySelector(".calculator__decButton") 
 
 // VARIABLES
-let currentNumber = ""
-let operator = ""
-let previousNumber = ""
-let calcNumber = 0
+let firstNumber = "";
+let operator = "";
+let secondNumber = "";
+let sumNumber = 0;
+let storedNumber = 0;
 
 // FUNCTIONS
+
 
 
 // NUMBER BUTTONS FUNCTION
 numberButtons.forEach(numButton => {
     numButton.addEventListener("click", (event) => {
-        if (currentNumber === ""){
-            currentNumber = event.target.innerHTML
-            
+        if (firstNumber === ""){
+            firstNumber = event.target.innerHTML
         } else {
-            currentNumber += event.target.innerHTML
+            firstNumber += event.target.innerHTML
         }
     display.innerHTML += event.target.innerHTML;
     }); 
@@ -30,43 +32,65 @@ numberButtons.forEach(numButton => {
 // OPERATOR BUTTONS FUNCTION
 operatorButtons.forEach(opButton => {
     opButton.addEventListener("click", (event) => {
-        // remove previous operator is another is pressed and overwrite the variable
+        // remove previous operator if another is pressed and overwrite the variable
+        
         display.innerHTML += event.target.innerHTML
         
         operator = event.target.innerHTML
-        previousNumber = currentNumber;
-        currentNumber = ""
-        // if current number empty then previousNumber is = calcNumber
+        // use previous calculation sum as a first number
+        if (storedNumber === 0){
+            secondNumber = firstNumber;
+            } else{
+            secondNumber = storedNumber;
+            }
+        firstNumber = ""      
+
     });
 });
 
 // EQUALS BUTTON FUNCTION
 equalButton.addEventListener("click", (event) =>{
-    // console.log("Current Number:", currentNumber)
-    // console.log("Previous Number:", previousNumber)
+    // console.log("Current Number:", firstNumber)
+    // console.log("Previous Number:", secondNumber)
     // console.log("Operator:", operator)
     switch (operator){
-        case "+": calcNumber = parseFloat(previousNumber) + parseFloat(currentNumber);
+        case "+": sumNumber = parseFloat(secondNumber) + parseFloat(firstNumber);
             break;
-        case "-":  calcNumber = parseFloat(previousNumber) - parseFloat(currentNumber);
+        case "-":  sumNumber = parseFloat(secondNumber) - parseFloat(firstNumber);
             break;
-        case "x": calcNumber = parseFloat(previousNumber) * parseFloat(currentNumber);
+        case "x": sumNumber = parseFloat(secondNumber) * parseFloat(firstNumber);
             break;
-        case "/":calcNumber = parseFloat(previousNumber) / parseFloat(currentNumber);
+        case "/":sumNumber = parseFloat(secondNumber) / parseFloat(firstNumber);
             break;
+        default:
+        "Error, please AC and try again";
+        break;
+        
     }
-    display.innerHTML = calcNumber
-    
+    display.innerHTML = sumNumber
+    storedNumber = sumNumber;
     // AFTER CALC RESET VARIABLE
+
     // add formatting to insert number commas
-    console.log(calcNumber)
+
+    console.log(storedNumber)
 })
 
-// AC BUTTON FUNCTION
+// AC BUTTON FUNCTION, 
 acButton.addEventListener("click", (event) => {
-    display.innerHTML = ""
-    currentNumber = ""
-    operator = ""
+    display.innerHTML = "";
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    sumNumber = 0;
+    storedNumber = 0;
 })
 
 
+// DECIMAL BUTTON
+decBtn.addEventListener('click', () => {
+    // If initial number doesn't include a '.', then attach a '.'.
+    if (firstNumber.includes('.')) {
+        firstNumber += '.';
+    }
+})
