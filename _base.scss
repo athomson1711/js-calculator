@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Roboto', sans-serif;
+    font-family:$primaryFont;
 }
 
 body {
     height: 100vh;
     width: 100%;
-    background: #E8D4AF;
+    background: $BackgroundColor;
 }
 
 button {
     border: none;
-    background-color: #805025;
+    background-color: $numbBtnCol;
     // border: 1px solid black;
 }
 
@@ -55,9 +53,9 @@ header {
         justify-content: space-between;
         height: 70vh;
         width: 400px;
-        background-color: #E19E41;
+        background-color: $calcBodyBackground;
         box-shadow: 0 0 25px 0 rgba(0, 0, 0, 1);
-        border: 15px solid #825024;
+        border: 15px solid $borderCol;
         border-radius: 5%;
 
         @media only screen and (max-width: 500px) {
@@ -71,12 +69,13 @@ header {
             align-items: center;
             justify-content:flex-start;
             height: 40%;
-            color: #ffffe0;
+            color: $displayTextCol;
             font-size: 2rem;
-            font-weight: 850;
-            border: 5px solid #825024;
+            font-weight: 100;
+            border: 5px solid $borderCol;
             margin: 10px;
-            background-color: #86B0A9;
+            background-color: $displayBackground;
+            font-family: $displayFont;
         }
 
         .calculator__grid {
@@ -102,26 +101,26 @@ header {
             }
 
             .calculator__opButton {
-                background-color: #D44A32;
-                color: white;
+                background-color: $opBtnCol;
+                color: $buttonTextCol;
             }
 
             .calculator__numButton {
-                color: white;
+                color: $buttonTextCol;
             }
 
             #AC {
-                background-color: #D44A32;
+                background-color: $numbBtnCol;
                 grid-area: AC;
                 letter-spacing: 0.1em;
                 width: 100%;
                 border-radius: 4%;
-                color: white;
+                color: $buttonTextCol;
                 
             }
 
             #dec{
-                color: white;
+                color: $buttonTextCol;
             }
 
             #divide {grid-area: divide}
@@ -141,12 +140,12 @@ header {
             #minus{grid-area: minus;}
             #equals {
                 grid-area: equals;
-                background-color: #008000;
-                color: white;
+                background-color: $equalsBtnCol;
+                color: $buttonTextCol;
             }
             #equals:active{
                 opacity: 1;
-                background-color: darkgreen;
+                background-color: $equalsBtnActiveCol;
             }
 
         }
