@@ -42,7 +42,7 @@ header {
 header h1 {
   text-align: center;
   color: orange;
-  font-weight: 50;
+  font-weight: bolder;
 }
 
 .calculator {
@@ -101,14 +101,19 @@ header h1 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  height: 40%;
-  color: #ffffe0;
-  font-size: 2rem;
-  font-weight: 100;
-  border: 5px solid #825024;
-  margin: 10px;
-  background-color: #86B0A9;
+  height: 50%;
   font-family: "Press Start 2P", cursive;
+  color: #ffffe0;
+  font-size: 1.3rem;
+  font-weight: 10;
+  border: 5px solid #825024;
+  margin: 0.5rem;
+  padding: 4px;
+  background-color: #86B0A9;
+}
+
+.calculator .calculator__container .calculator__div {
+  height: 1em;
 }
 
 .calculator .calculator__container .calculator__grid {

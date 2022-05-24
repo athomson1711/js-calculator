@@ -32,7 +32,7 @@ header {
     h1 {
         text-align: center;
         color: orange;
-        font-weight: 50;
+        font-weight: bolder;
     }
 }
 
@@ -68,14 +68,20 @@ header {
             width: 90%;
             align-items: center;
             justify-content:flex-start;
-            height: 40%;
-            color: $displayTextCol;
-            font-size: 2rem;
-            font-weight: 100;
-            border: 5px solid $borderCol;
-            margin: 10px;
-            background-color: $displayBackground;
+            height: 50%;
             font-family: $displayFont;
+            color: $displayTextCol;
+            font-size: 1.3rem;
+            font-weight: 10;
+            border: 5px solid $borderCol;
+            margin: 0.5rem;
+            padding: 4px;
+            background-color: $displayBackground;
+            
+        }
+
+        .calculator__div{
+            height: 1em;
         }
 
         .calculator__grid {

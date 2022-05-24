@@ -12,9 +12,9 @@ let operator = "";
 let secondNumber = "";
 let sumNumber = 0;
 let storedNumber = 0;
+let decimalBoolean = false;
 
 // ---------FUNCTIONS-----------
-
 
 // NUMBER BUTTONS FUNCTION
 numberButtons.forEach(numButton => {
@@ -42,7 +42,9 @@ operatorButtons.forEach(opButton => {
             } else{
             secondNumber = storedNumber;
             }
-        firstNumber = ""      
+        firstNumber = ""   
+        decimalBoolean = false;  
+        decBtn.disabled = false; 
 
     });
 });
@@ -79,9 +81,29 @@ acButton.addEventListener("click", (event) => {
     operator = "";
     sumNumber = 0;
     storedNumber = 0;
+    decimalBoolean = false;
+    decBtn.disabled = false; 
+
+    // console.log(firstNumber);
+    // console.log(secondNumber);
+    // console.log(operator);
+    // console.log(sumNumber);
+    // console.log(storedNumber);
 })
 
-// DECIMAL BUTTON
+// DECIMAL BUTTON FUNCTION
 decBtn.addEventListener('click', () => {
-   
+if (firstNumber != "") {
+    firstNumber += "."
+    display.innerHTML += "."
+}else{
+    firstNumber += "0."
+    display.innerHTML += "."
+}
+
+decimalBoolean = true;
+if (decimalBoolean) {
+    decBtn.disabled = true
+}
+
 })
