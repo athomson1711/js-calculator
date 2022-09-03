@@ -71,7 +71,6 @@ The following inbuilt JavaScript methods are used in this codebase:
 - CSS
 - Mobile first / responsive design
 - Git version control
-- UI - features unique mesh gradient background I created in Adobe Illustrator.
 
 ## Further Developments:
 
