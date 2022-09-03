@@ -6,7 +6,7 @@
 
 ##
 
-![Calculator Design](assets/js-calc.png)
+![Calculator Design](/images/js-calc.png)
 
 ## User Story:
 
